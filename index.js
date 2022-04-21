@@ -7,4 +7,4 @@ import {
 
 
 
-console.log(await removeContact());
+await addContact(2)
