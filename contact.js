@@ -14,6 +14,7 @@ const changeFile = async (data) => {
 export async function listContacts() {
   const data = await fs.readFile(contactsPath);
   const contacts = JSON.parse(data);
+  console.log(contacts);
   return contacts;
 }
 
@@ -53,4 +54,5 @@ export async function addContact(name, email, phone) {
   }
   const newContacts=data.push(newUser)
   changeFile(data)
+ return data
   }
