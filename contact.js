@@ -45,5 +45,12 @@ export async function addContact(name, email, phone) {
    })
  const maxID=Math.max.apply(null,maxId)
   const newId=maxID+1
-  console.log(newId);
+  const newUser={
+      "id": String(newId),
+      "name": name,
+      "email": email,
+      "phone": phone
+  }
+  const newContacts=data.push(newUser)
+  changeFile(data)
   }

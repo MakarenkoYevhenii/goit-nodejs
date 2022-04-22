@@ -7,4 +7,4 @@ import {
 
 
 
-await addContact(2)
+await addContact("eugenMakarenko", "Donec.elementum@scelerisquescelerisquedui.net", "(748) 206-2688")
