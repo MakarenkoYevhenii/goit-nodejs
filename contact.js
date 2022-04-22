@@ -11,7 +11,7 @@ const changeFile = async (data) => {
   });
 };
 
-export async function listContacts() {
+export async function getListContacts() {
   const data = await fs.readFile(contactsPath);
   const contacts = JSON.parse(data);
   console.log(contacts);
@@ -19,7 +19,7 @@ export async function listContacts() {
 }
 
 export async function getContactById(contactId) {
-  const data = await listContacts();
+  const data = await getListContacts();
   const filter = data.filter((data) => {
     if (data.id === String(contactId)) {
       return data;
@@ -29,7 +29,7 @@ export async function getContactById(contactId) {
 }
 
 export async function removeContact(contactId) {
-  const data = await listContacts();
+  const data = await getListContacts();
   const filter = data.filter((data) => {
     if (data.id !== String(contactId)) {
       return data;
@@ -40,7 +40,7 @@ export async function removeContact(contactId) {
 }
 
 export async function addContact(name, email, phone) {
-  const data=await listContacts()
+  const data=await getListContacts()
    const maxId= data.map(data=>{
      return data.id
    })

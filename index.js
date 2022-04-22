@@ -1,5 +1,5 @@
 import {
-  listContacts,
+  getListContacts,
   getContactById,
   removeContact,
   addContact,
@@ -18,11 +18,11 @@ program.parse(process.argv);
 
 const argv = program.opts();
 
-// TODO: рефакторить
+
 const  invokeAction = async ({ action, id, name, email, phone })=> {
   switch (action) {
     case "list":
-        const contact=await listContacts()
+        const contact=await getListContacts()
         console.table(contact)
       break;
 
